@@ -48,3 +48,4 @@ Given the movement of the camera, parts of the ground and sidewalk have large ap
 ## **Possible Improvements**
 1. Pre-inference on the RAFT model, we can perform image alignment/registration to undo the motion of the camera.
 2. We can perform background subtraction pre-inference and perform optical flow on foreground objects only.
+3. If we have access to camera intrinsic matrix, given we have a depth map available for each frame, we can use the object coordinates to estimate the pose of the camera for each frame. We can undo pose changes bewteen consequtive frames and improve our optical flow results.
