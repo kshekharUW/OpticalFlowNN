@@ -11,33 +11,28 @@ This project aims to enhance video motion by estimating optical flow to identify
 ## **Environment Setup/Requirements**
 1. Ubuntu 22.04
 2. Docker
+3. Visual Studio Code (for convenience)
+4. Install Dev Containers extension (to attach to a running container). Good youtube guide: https://www.youtube.com/watch?v=dihfA7Ol6Mw
 
 ## **Usage**
-
 Follow these steps:
-
 1. Clone the repository: **`https://github.com/kshekharUW/OpticalFlowNN.git`**
 2. Navigate to the project directory: **`OpticalFlowNN`**
-3. Run the script: **`./run.sh`**
+3. Run the script: **`./run.sh`**. This should launch a container named raftFlowContainer and open up VS code. If you don't want to use VS code, you can use "docker exec" to run commands inside the container.
+5. Place input video inside volume/RAFT/videos
 
 ## **License**
 
-Project Title is released under the MIT License. See the **[LICENSE](https://www.blackbox.ai/share/LICENSE)** file for details.
+Project Title is released under the MIT License.
 
 ## **Authors and Acknowledgment**
 
 Project Title was created by **[Krishnendu Shekhar](https://github.com/kshekharUW)**.
 
 Project draws heavily from the following repos:
-
 - **https://github.com/princeton-vl/RAFT.git**
 - **https://github.com/spmallick/learnopencv.git**
 
-Thank you to all the contributors for their hard work and dedication to the project.
-
-## **Code of Conduct**
-
-Please note that this project is released with a Contributor Code of Conduct. By participating in this project, you agree to abide by its terms. See the **[CODE_OF_CONDUCT.md](https://www.blackbox.ai/share/CODE_OF_CONDUCT.md)** file for more information.
 
 ## **FAQ**
 
