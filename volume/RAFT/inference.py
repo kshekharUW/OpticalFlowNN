@@ -3,6 +3,7 @@ import sys
 
 os.environ["OPENCV_FFMPEG_READ_ATTEMPTS"] = "8000"
 sys.path.insert(0, os.path.join(os.path.abspath(os.getcwd()), "core"))
+sys.path.insert(0, os.path.join(os.path.abspath(os.getcwd()), "core"))
 print(os.path.join(os.path.abspath(os.getcwd()), "core"))
 
 from argparse import ArgumentParser
@@ -17,7 +18,9 @@ def main():
     parser.add_argument("--iters", type=int, default=12)
 
     parser.add_argument("--video", type=str, default="./videos/input_video.mp4")
-    parser.add_argument("--save", action="store_true", help="save demo frames")
+    parser.add_argument(
+        "--save", action="store_true", help="save demo frames", default=False
+    )
     parser.add_argument(
         "--small", action="store_true", help="use small model", default=False
     )

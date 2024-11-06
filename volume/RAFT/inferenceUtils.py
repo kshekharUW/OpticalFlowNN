@@ -150,7 +150,7 @@ def resize_flow_to_match_image(flow, img):
     return resized_flow
 
 
-def brighten_image(img, brighten_area, method="blend"):
+def brighten_image(img, brighten_area, method="multiplicative"):
     """Brightens an RGB image based on a brightness map.
 
     Args:
@@ -171,6 +171,7 @@ def brighten_image(img, brighten_area, method="blend"):
     if method == "additive":
         brightened_img = np.clip(img + brighten_area * 255, 0, 255).astype(np.uint8)
     elif method == "multiplicative":
+        brighten_area = np.dstack([brighten_area] * 3)
         brightened_img = np.clip(img * (1 + brighten_area), 0, 255).astype(np.uint8)
     elif method == "gamma":
         gamma = 4.0  # Adjust gamma value as needed
@@ -260,6 +261,7 @@ class OpticalFlowProcessor:
 
         # concatenate, save and show images
         img_flo = np.concatenate([img, bright_image, flo, top_mask_3channel], axis=1)
+        # img_flo = np.concatenate([img, bright_image], axis=1)
 
         # Calculate desired width to maintain aspect ratio
         img_height, img_width, _ = img_flo.shape
@@ -278,8 +280,15 @@ class OpticalFlowProcessor:
         return True
 
     def run_inference(
-        self, video_path, start_frame=0, end_frame=float("inf"), skip_factor=10
+        self,
+        video_path=None,
+        start_frame=0,
+        end_frame=float("inf"),
+        skip_factor=10,
     ):
+        if video_path == None:
+            video_path = self.args.video
+
         # capture the video and get the first frame
         cap = cv2.VideoCapture(video_path)
         ret, frame_1 = cap.read()
