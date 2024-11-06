@@ -36,7 +36,7 @@ Overall, this code iterates through a video, preprocesses frames, predicts optic
   3. Brightning: This step is performed via the brighten_image function. The brighten_image function enhances the brightness of an RGB image based on a given brightness map. This map indicates the desired level of brightening for each pixel. The function offers several methods for brightening: additive, multiplicative, gamma correction, and blending. The additive method simply adds a scaled version of the brightness map to the image. The multiplicative method scales the image pixels by a factor based on the brightness map. Gamma correction adjusts the overall image contrast. The blending method combines the original image and a brightened version weighted by the brightness map. The function ensures that the output image pixel values remain within the valid range of 0 to 255. 
 
 ## **Metrics**
-On a NVIDIA GTA 1070 GPU, the processing time per frame was ~0.05 s. 
+On a NVIDIA GTX 1070 GPU, the processing time per frame was ~0.05 s. 
 
 ## **Limitations**
 Given the movement of the camera, parts of the ground and sidewalk have large apparent motion relative to the camera; resulting in high optical flow results from the model.
