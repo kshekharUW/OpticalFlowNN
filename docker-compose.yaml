@@ -1,0 +1,22 @@
+services:
+  raft:
+    image: raftflow:0.1
+    ports:
+        - "8181:81"
+    container_name: raftFlowContainer
+    tty: true
+    volumes:
+      - ../volume/:/home/volume
+    working_dir: /home/volume
+    ipc: "host"
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all # alternatively, use `count: all` for all GPUs
+              capabilities: 
+                - gpu
+                - utility # nvidia-smi
+                - compute # CUDA
+                - video   # NVDEC/NVENC/NVCUVID. For instance to use a hardware accelerated ffmpeg. Skip it if you don't need it
