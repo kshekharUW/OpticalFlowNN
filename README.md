@@ -20,6 +20,7 @@ Follow these steps:
 2. Navigate to the project directory: **`OpticalFlowNN`**
 3. Run the script: **`./run.sh`**. This should launch a container named raftFlowContainer and open up VS code. If you don't want to use VS code, you can use "docker exec" to run commands inside the container.
 5. Place input video inside volume/RAFT/videos
+6. Download and extract source_depth inside videos folder.
 
 ## **License**
 
