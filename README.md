@@ -25,6 +25,9 @@ Follow these steps:
 ## **Demo**
 [Output](https://drive.google.com/file/d/12GZgBbRX-SGOZLLjVHnbjzGZ2KnO9Ufi/view?usp=sharing)
 - There are four images in each frame. [input frame, output frame, optical flow, brightning mask]
+-![frame_317](https://github.com/user-attachments/assets/6afbffb2-7776-4057-90b5-abfce91f4b00)
+-![frame_1](https://github.com/user-attachments/assets/058d41a7-76fb-4d06-8b07-f96a685fa717)
+
 
 ## **Approach**
 Overall, this code iterates through a video, preprocesses frames, predicts optical flow using a pre-trained model, and optionally visualizes the flow on the frame. It skips frames based on a user-defined factor and measures the execution time for the prediction.
@@ -37,6 +40,8 @@ On a NVIDIA GTA 1070 GPU, the processing time per frame was ~0.05 s.
 
 ## **Limitations**
 Given the movement of the camera, parts of the ground and sidewalk have large apparent motion relative to the camera; resulting in high optical flow results from the model.
+-![frame_16](https://github.com/user-attachments/assets/f3a3250f-2a77-442c-b50b-68745d31c98b)
+
 
 ## **Possible Improvements**
 1. Pre-inference on the RAFT model, we can perform image alignment/registration to undo the motion of the camera.
