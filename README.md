@@ -1,6 +1,6 @@
 # **README File**
 
-## **Optical Flow**
+## **Optical Flow Brightning**
 
 Optical Flow guided near field brightning
 
@@ -23,11 +23,11 @@ Follow these steps:
 
 ## **License**
 
-Project Title is released under the MIT License.
+Optical Flow Brightning is released under the MIT License.
 
 ## **Authors and Acknowledgment**
 
-Project Title was created by **[Krishnendu Shekhar](https://github.com/kshekharUW)**.
+Optical Flow Brightning was created by **[Krishnendu Shekhar](https://github.com/kshekharUW)**.
 
 Project draws heavily from the following repos:
 - **https://github.com/princeton-vl/RAFT.git**
