@@ -34,27 +34,13 @@ Project draws heavily from the following repos:
 - **https://github.com/spmallick/learnopencv.git**
 
 
-## **FAQ**
+## **Approach**
+Overall, this code iterates through a video, preprocesses frames, predicts optical flow using a pre-trained model, and optionally visualizes the flow on the frame. It skips frames based on a user-defined factor and measures the execution time for the prediction.
+  1. Preprocessing: The Preprocessing step takes an image frame and resizes it while maintaining aspect ratio to a size compatible with the deep learning model. It then converts the image to a PyTorch tensor and transfers it to the specified device. The function also returns the scaling factor used during resizing.
+  2. Optical Flow prediction: This step is performed via the OpticalFlowProcessor class. The OpticalFlowProcessor class is designed to analyze videos and visualize motion. It loads a pre-trained RAFT model for optical flow estimation, processes video frames, predicts optical flow, and visualizes the results. The visualization function can optionally incorporate depth information to highlight motion in specific regions. The class provides a flexible framework for video analysis and visualization tasks.
+  3. Brightning: This step is performed via the brighten_image function. The brighten_image function enhances the brightness of an RGB image based on a given brightness map. This map indicates the desired level of brightening for each pixel. The function offers several methods for brightening: additive, multiplicative, gamma correction, and blending. The additive method simply adds a scaled version of the brightness map to the image. The multiplicative method scales the image pixels by a factor based on the brightness map. Gamma correction adjusts the overall image contrast. The blending method combines the original image and a brightened version weighted by the brightness map. The function ensures that the output image pixel values remain within the valid range of 0 to 255.    
 
-**Q:** What is Project Title?
 
-**A:** Project Title is a project that does something useful.
-
-**Q:** How do I install Project Title?
-
-**A:** Follow the installation steps in the README file.
-
-**Q:** How do I use Project Title?
-
-**A:** Follow the usage steps in the README file.
-
-**Q:** How do I contribute to Project Title?
-
-**A:** Follow the contributing guidelines in the README file.
-
-**Q:** What license is Project Title released under?
-
-**A:** Project Title is released under the MIT License. See the **[LICENSE](https://www.blackbox.ai/share/LICENSE)** file for details.
 
 ## **Changelog**
 
