@@ -6,8 +6,8 @@ services:
     container_name: raftFlowContainer
     tty: true
     volumes:
-      - ../volume/:/home/volume
-    working_dir: /home/volume
+      - ./volume/:/home/volume
+    working_dir: /home/volume/RAFT
     ipc: "host"
     deploy:
       resources:
