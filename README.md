@@ -1,6 +1,6 @@
 # **README**
 
-## **Optical Flow Brightning**
+## **Optical Flow Brightening**
 
 Optical Flow guided near field brightning
 
