@@ -12,7 +12,7 @@ This project aims to enhance video motion by estimating optical flow to identify
 1. Ubuntu 22.04
 2. Docker
 3. Visual Studio Code (for convenience)
-4. Install Dev Containers extension (to attach to a running container). Good youtube guide: https://www.youtube.com/watch?v=dihfA7Ol6Mw
+4. Install Dev Containers extension (to attach to a running container). Good [YouTube guide](https://www.youtube.com/watch?v=dihfA7Ol6Mw).
 
 ## **Usage**
 Follow these steps:
@@ -22,17 +22,9 @@ Follow these steps:
 5. Place input video inside volume/RAFT/videos
 6. Download and extract source_depth inside videos folder.
 
-## **License**
-
-Optical Flow Brightning is released under the MIT License.
-
-## **Authors and Acknowledgment**
-
-Optical Flow Brightning was created by **[Krishnendu Shekhar](https://github.com/kshekharUW)**.
-
-Project draws heavily from the following repos:
-- **https://github.com/princeton-vl/RAFT.git**
-- **https://github.com/spmallick/learnopencv.git**
+## **Demo**
+[Output](https://drive.google.com/file/d/12GZgBbRX-SGOZLLjVHnbjzGZ2KnO9Ufi/view?usp=sharing)
+- There are four images in each frame. [input frame, output frame, optical flow, brightning mask]
 
 ## **Approach**
 Overall, this code iterates through a video, preprocesses frames, predicts optical flow using a pre-trained model, and optionally visualizes the flow on the frame. It skips frames based on a user-defined factor and measures the execution time for the prediction.
@@ -50,3 +42,10 @@ Given the movement of the camera, parts of the ground and sidewalk have large ap
 1. Pre-inference on the RAFT model, we can perform image alignment/registration to undo the motion of the camera.
 2. We can perform background subtraction pre-inference and perform optical flow on foreground objects only.
 3. If we have access to camera intrinsic matrix, given we have a depth map available for each frame, we can use the object coordinates to estimate the pose of the camera for each frame. We can undo pose changes bewteen consequtive frames and improve our optical flow results.
+
+## **Authors and Acknowledgment**
+Optical Flow Brightning was created by **[Krishnendu Shekhar](https://github.com/kshekharUW)**.
+
+Project draws heavily from the following repos:
+- **https://github.com/princeton-vl/RAFT.git**
+- **https://github.com/spmallick/learnopencv.git**
