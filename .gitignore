@@ -53,6 +53,5 @@ Thumbs.db
 
 # datasets folder
 *volume/RAFT/datasets/*
-*volume/RAFT/models/*
 *volume/RAFT/backup/*
 
